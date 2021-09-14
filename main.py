@@ -4,7 +4,7 @@ from tensorflow.keras.utils import to_categorical
 import numpy as np
 
 problem = "FLOW016"
-max_length = 100 #(MNMX:2874, FLOW016: 1129, SUBINC: 1126, SUMTRIAN: 2799
+max_length = 1129 #(MNMX:2874, FLOW016: 1129, SUBINC: 1126, SUMTRIAN: 2799
 vocab_size = 20000
 n_class = 5
 
@@ -188,7 +188,7 @@ callback = tf.keras.callbacks.EarlyStopping(monitor='loss', patience=5)
 
 model.compile("adam", "sparse_categorical_crossentropy", metrics=["accuracy"])
 history = model.fit(
-    x_train, y_train, batch_size=32, epochs=1, validation_data=(x_cv, y_cv), callbacks=[callback], verbose = 0
+    x_train, y_train, batch_size=32, epochs=20, validation_data=(x_cv, y_cv), callbacks=[callback], verbose = 0
 )
 
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
