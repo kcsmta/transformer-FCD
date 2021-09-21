@@ -13,6 +13,7 @@ prob = "FLOW016"
 data_part = 1.0 # try 1.0, 0.75, 0.5, 0.25
 
 nb_classes = 5
+nb_epochs = 20
 
 """
 ## Implement a Transformer block as a layer
@@ -191,7 +192,7 @@ model.summary()
 callback = tf.keras.callbacks.EarlyStopping(monitor='accuracy', patience=5)
 model.compile("adam", "categorical_crossentropy", metrics=["accuracy"])
 history = model.fit(
-    X_train, y_train, batch_size=32, epochs=2, validation_data=(X_CV, y_CV), callbacks=[callback], verbose = 1
+    X_train, y_train, batch_size=32, epochs=nb_epochs, validation_data=(X_CV, y_CV), callbacks=[callback], verbose = 1
 )
 
 print("-----------------------")
