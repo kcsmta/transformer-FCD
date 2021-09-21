@@ -10,9 +10,9 @@ from keras import backend as K
 from sklearn.metrics import accuracy_score, f1_score
 
 prob = "FLOW016"
-nb_classes = 5
 data_part = 1.0 # try 1.0, 0.75, 0.5, 0.25
 
+nb_classes = 5
 
 """
 ## Implement a Transformer block as a layer
