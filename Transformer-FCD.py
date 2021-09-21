@@ -9,8 +9,8 @@ import numpy as np
 from keras import backend as K
 from sklearn.metrics import accuracy_score, f1_score
 
-prob = "FLOW016"
-data_part = 0.25 # try 1.0, 0.75, 0.5, 0.25
+prob = "SUMTRIAN" # FLOW016, MNMX, SUBINC, SUMTRIAN
+data_part = 1.0 # try 1.0, 0.75, 0.5, 0.25
 
 nb_classes = 5
 nb_epochs = 20
