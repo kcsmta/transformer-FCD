@@ -186,6 +186,7 @@ def load_ASMSeqData(path, wordvec, numview = 1, inst_group = None):
     veclen = len(wordvec["movl"])
 
     for line in lines:
+        line = line.replace("<sssss>"," ")
         items = line.split()
         if len(items) <= 1:
             continue
@@ -195,8 +196,6 @@ def load_ASMSeqData(path, wordvec, numview = 1, inst_group = None):
         V2 = []
 
         for w in items[1:]:  # for each word
-            if w not in wordvec:
-                continue
             V1.append(wordvec[w])
             if numview == 2:
                 if w in inst_group:
