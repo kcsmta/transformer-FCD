@@ -24,6 +24,7 @@ if prob not in ["FLOW016", "MNMX", "SUBINC", "SUMTRIAN"]:
     sys.exit()
 
 nb_classes = 5
+nb_epochs = 20
 
 """
 ## Implement a Transformer block as a layer
@@ -203,7 +204,7 @@ print("Run training on {} of {}".format(data_part*100, prob))
 callback = tf.keras.callbacks.EarlyStopping(monitor='accuracy', patience=5)
 model.compile("adam", "categorical_crossentropy", metrics=["accuracy"])
 history = model.fit(
-    X_train, y_train, batch_size=32, epochs=2, validation_data=(X_CV, y_CV), callbacks=[callback], verbose = 1
+    X_train, y_train, batch_size=32, epochs=nb_epochs, validation_data=(X_CV, y_CV), callbacks=[callback], verbose = 1
 )
 
 print("-----------------------")
