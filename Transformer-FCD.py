@@ -199,6 +199,7 @@ model.summary()
 """
 ## Train and Evaluate
 """
+print("Run training on {} of {}".format(data_part*100, prob))
 callback = tf.keras.callbacks.EarlyStopping(monitor='accuracy', patience=5)
 model.compile("adam", "categorical_crossentropy", metrics=["accuracy"])
 history = model.fit(
