@@ -84,7 +84,7 @@ print(y_test.shape)
 print(y_CV.shape)
 
 print('Build model...')
-model = TextCNN()
+model = TextCNN(class_num=nb_classes)
 model.compile('adam', 'categorical_crossentropy', metrics=['accuracy'])
 
 print("Run training on {} of {}".format(data_part*100, prob))
