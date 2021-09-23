@@ -89,7 +89,7 @@ model.compile('adam', 'categorical_crossentropy', metrics=['accuracy'])
 
 print("Run training on {} of {}".format(data_part*100, prob))
 start = time. time()
-early_stopping = EarlyStopping(monitor='val_accuracy', patience=3, mode='max')
+early_stopping = EarlyStopping(monitor='val_accuracy', patience=5, mode='max')
 history = model.fit(X_train, y_train,
           batch_size=32,
           epochs=epochs,
