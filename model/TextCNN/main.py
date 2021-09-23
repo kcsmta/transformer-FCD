@@ -87,7 +87,7 @@ print('Build model...')
 model = TextCNN()
 model.compile('adam', 'categorical_crossentropy', metrics=['accuracy'])
 
-print('Train...')
+print("Run training on {} of {}".format(data_part*100, prob))
 start = time. time()
 early_stopping = EarlyStopping(monitor='val_accuracy', patience=3, mode='max')
 history = model.fit(X_train, y_train,
