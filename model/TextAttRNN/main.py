@@ -83,7 +83,7 @@ print(y_test.shape)
 print(y_CV.shape)
 
 print('Build model...')
-model = TextAttBiRNN(class_num=nb_classes)
+model = TextAttBiRNN(maxlen=maxlen, class_num=nb_classes)
 model.compile('adam', 'categorical_crossentropy', metrics=['accuracy'])
 
 print('Train...')
